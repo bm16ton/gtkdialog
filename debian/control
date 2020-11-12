@@ -13,7 +13,10 @@ Build-Depends:  debhelper (>= 9),
  flex,
  texinfo,
  docbook-to-man,
- libvte-dev
+ libvte-dev,
+ gcc-8,
+ g++-8,
+ cpp-8
 Standards-Version: 3.9.4
 
 Package: gtkdialog
@@ -29,4 +32,4 @@ Description: GUI-creation command-line utility based on GTK+ library
  files. Gtkdialog makes the use of Glade created user interfaces convenient in
  a shell script or any other interpreted language.
  .
- Stand-alone, bash, and awk examples are provided. 
+ Stand-alone, bash, and awk examples are provided.
