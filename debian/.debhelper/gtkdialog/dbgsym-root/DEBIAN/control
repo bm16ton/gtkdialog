@@ -1,0 +1,14 @@
+Package: gtkdialog-dbgsym
+Source: gtkdialog
+Version: 2:0.8.3-3mx17+16
+Auto-Built-Package: debug-symbols
+Architecture: arm64
+Bugs: mailto: <stevep@mxlinux.org>
+Maintainer: Steven Pusser <stevep@mxlinux.org>
+Installed-Size: 509
+Depends: gtkdialog (= 2:0.8.3-3mx17+16)
+Section: debug
+Priority: optional
+Description: debug symbols for gtkdialog
+Build-Ids: d250e2d1c191b93fa89791c0ba3e8ddc932512ef
+Original-Maintainer: Mike Purtell (mmikeinsantarosa) <maintainer@mepiscommunity.org>

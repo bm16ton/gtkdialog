@@ -1,0 +1,52 @@
+.TH "gtkdialog" "1" 
+.SH "NAME" 
+gtkdialog \(em GUI-creation command-line utility based on GTK+ library 
+.SH "SYNOPSIS" 
+.PP 
+\fBgtkdialog\fR [options]  
+.SH "DESCRIPTION" 
+.PP 
+\fBgtkdialog\fR is a GUI-creation utility 
+based on GTK+ libreries that can be used with an arbitrary interpreter. 
+.PP 
+Using gtkdialog you can describe a graphical user 
+interface in a simple XML-like language, and use it with any interpreter that 
+supports either files, standard I/O, or environment variables. 
+.PP 
+For more information on the syntax of gtkdialog programs, please see  
+the examples provided in /usr/share/doc/gtkdialog/examples or run  
+\fBinfo gtkdialog\fR. 
+.PP 
+This manual page was written for the \fBDebian GNU/Linux\fP distribution 
+because the original program does not have a manual page. 
+.SH "OPTIONS" 
+.IP "\fB-h, \-\-help\fP" 10 
+Print usage information and exit. 
+.IP "\fB-v, \-\-version\fP" 10 
+Print version information and exit. 
+.IP "\fB-p, \-\-program [VARNAME]\fP" 10 
+Read the program from the environment variable VARNAME. 
+.IP "\fB-s, \-\-stdin\fP" 10 
+Read the program from the standard input. 
+.IP "\fB-f [filename]\fP" 10 
+Read the program from a file. 
+.IP "\fB-i [filename]\fP" 10 
+Include file as bash script. 
+.IP "\fB-d, \-\-debug\fP" 10 
+Run in debug mode. 
+.SH "AUTHOR" 
+.PP 
+This manual page was written by Fabio Tranchitella <kobold@kobold.it> for 
+the \fBDebian GNU/Linux\fP system (but may be used by others). 
+.PP 
+Permission is granted to copy, distribute and/or modify 
+this document under the terms of the GNU Free 
+Documentation License, Version 1.1 or any later version 
+published by the Free Software Foundation; with no Invariant 
+Sections, no Front-Cover Texts and no Back-Cover Texts.  A copy 
+of the license can be found under 
+\fB/usr/share/common-licenses/FDL\fP. 
+.SH "SEE ALSO" 
+.PP 
+gtklauncher (1) 
+.\" created by instant / docbook-to-man 
