@@ -176,14 +176,14 @@ AM_V_CCLD = $(am__v_CCLD_$(V))
 am__v_CCLD_ = $(am__v_CCLD_$(AM_DEFAULT_VERBOSITY))
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-#am__skiplex = test -f $@ ||
+am__skiplex = test -f $@ ||
 LEXCOMPILE = $(LEX) $(AM_LFLAGS) $(LFLAGS)
 AM_V_LEX = $(am__v_LEX_$(V))
 am__v_LEX_ = $(am__v_LEX_$(AM_DEFAULT_VERBOSITY))
 am__v_LEX_0 = @echo "  LEX     " $@;
 am__v_LEX_1 = 
 YLWRAP = $(top_srcdir)/ylwrap
-#am__skipyacc = test -f $@ ||
+am__skipyacc = test -f $@ ||
 am__yacc_c2h = sed -e s/cc$$/hh/ -e s/cpp$$/hpp/ -e s/cxx$$/hxx/ \
 		   -e s/c++$$/h++/ -e s/c$$/h/
 YACCCOMPILE = $(YACC) $(AM_YFLAGS) $(YFLAGS)
@@ -229,10 +229,10 @@ AUTOHEADER = autoheader
 AUTOMAKE = automake-1.16
 AWK = gawk
 CC = gcc
-CCDEPMODE = depmode=gcc3
-CFLAGS = -g -O2
+CCDEPMODE = depmode=none
+CFLAGS = -g -O2 -fdebug-prefix-map=/home/maddocks/src/gtkdialog=. -fstack-protector-strong -Wformat -Werror=format-security
 CPP = gcc -E
-CPPFLAGS = 
+CPPFLAGS = -Wdate-time -D_FORTIFY_SOURCE=2
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
@@ -256,7 +256,7 @@ INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
-LDFLAGS = 
+LDFLAGS = -Wl,-Bsymbolic-functions -Wl,-z,relro
 LEX = flex
 LEXLIB = 
 LEX_OUTPUT_ROOT = lex.yy
@@ -269,7 +269,7 @@ LIBS = \
 	
 
 LTLIBOBJS = 
-MAINT = 
+MAINT = #
 MAKEINFO = makeinfo
 MKDIR_P = /bin/mkdir -p
 OBJEXT = o
@@ -303,7 +303,7 @@ am__quote =
 am__tar = $${TAR-tar} chof - "$$tardir"
 am__untar = $${TAR-tar} xf -
 bindir = ${exec_prefix}/bin
-build_alias = 
+build_alias = aarch64-linux-gnu
 builddir = .
 datadir = ${datarootdir}
 datarootdir = ${prefix}/share
@@ -313,25 +313,25 @@ exec_prefix = ${prefix}
 host_alias = 
 htmldir = ${docdir}
 includedir = ${prefix}/include
-infodir = ${datarootdir}/info
+infodir = /usr/share/info
 install_sh = ${SHELL} /home/maddocks/src/gtkdialog/install-sh
-libdir = ${exec_prefix}/lib
-libexecdir = ${exec_prefix}/libexec
+libdir = ${prefix}/lib/aarch64-linux-gnu
+libexecdir = ${prefix}/lib/aarch64-linux-gnu
 localedir = ${datarootdir}/locale
-localstatedir = ${prefix}/var
-mandir = ${datarootdir}/man
+localstatedir = /var
+mandir = /usr/share/man
 mkdir_p = $(MKDIR_P)
 oldincludedir = /usr/include
 pdfdir = ${docdir}
-prefix = /usr/local
+prefix = /usr
 program_transform_name = s,x,x,
 psdir = ${docdir}
 runstatedir = ${localstatedir}/run
 sbindir = ${exec_prefix}/sbin
 sharedstatedir = ${prefix}/com
 srcdir = .
-svnv = 
-sysconfdir = ${prefix}/etc
+svnv = /usr/bin/svnversion
+sysconfdir = /etc
 target_alias = 
 top_build_prefix = ../
 top_builddir = ..
@@ -403,7 +403,7 @@ all: $(BUILT_SOURCES)
 
 .SUFFIXES:
 .SUFFIXES: .c .l .o .obj .y
-$(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
+$(srcdir)/Makefile.in: # $(srcdir)/Makefile.am  $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
 	    *$$dep*) \
@@ -427,9 +427,9 @@ Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 $(top_builddir)/config.status: $(top_srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
 
-$(top_srcdir)/configure:  $(am__configure_deps)
+$(top_srcdir)/configure: # $(am__configure_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
-$(ACLOCAL_M4):  $(am__aclocal_m4_deps)
+$(ACLOCAL_M4): # $(am__aclocal_m4_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
 $(am__aclocal_m4_deps):
 install-binPROGRAMS: $(bin_PROGRAMS)
@@ -488,50 +488,50 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-include ./$(DEPDIR)/actions.Po # am--include-marker
-include ./$(DEPDIR)/attributes.Po # am--include-marker
-include ./$(DEPDIR)/automaton.Po # am--include-marker
-include ./$(DEPDIR)/glade_support.Po # am--include-marker
-include ./$(DEPDIR)/gtkdialog.Po # am--include-marker
-include ./$(DEPDIR)/gtkdialog_lexer.Po # am--include-marker
-include ./$(DEPDIR)/gtkdialog_parser.Po # am--include-marker
-include ./$(DEPDIR)/printing.Po # am--include-marker
-include ./$(DEPDIR)/signals.Po # am--include-marker
-include ./$(DEPDIR)/stack.Po # am--include-marker
-include ./$(DEPDIR)/stringman.Po # am--include-marker
-include ./$(DEPDIR)/tag_attributes.Po # am--include-marker
-include ./$(DEPDIR)/variables.Po # am--include-marker
-include ./$(DEPDIR)/widget_button.Po # am--include-marker
-include ./$(DEPDIR)/widget_checkbox.Po # am--include-marker
-include ./$(DEPDIR)/widget_colorbutton.Po # am--include-marker
-include ./$(DEPDIR)/widget_combobox.Po # am--include-marker
-include ./$(DEPDIR)/widget_comboboxtext.Po # am--include-marker
-include ./$(DEPDIR)/widget_edit.Po # am--include-marker
-include ./$(DEPDIR)/widget_entry.Po # am--include-marker
-include ./$(DEPDIR)/widget_eventbox.Po # am--include-marker
-include ./$(DEPDIR)/widget_expander.Po # am--include-marker
-include ./$(DEPDIR)/widget_fontbutton.Po # am--include-marker
-include ./$(DEPDIR)/widget_frame.Po # am--include-marker
-include ./$(DEPDIR)/widget_hbox.Po # am--include-marker
-include ./$(DEPDIR)/widget_hscale.Po # am--include-marker
-include ./$(DEPDIR)/widget_hseparator.Po # am--include-marker
-include ./$(DEPDIR)/widget_list.Po # am--include-marker
-include ./$(DEPDIR)/widget_menubar.Po # am--include-marker
-include ./$(DEPDIR)/widget_menuitem.Po # am--include-marker
-include ./$(DEPDIR)/widget_notebook.Po # am--include-marker
-include ./$(DEPDIR)/widget_pixmap.Po # am--include-marker
-include ./$(DEPDIR)/widget_progressbar.Po # am--include-marker
-include ./$(DEPDIR)/widget_radiobutton.Po # am--include-marker
-include ./$(DEPDIR)/widget_spinbutton.Po # am--include-marker
-include ./$(DEPDIR)/widget_statusbar.Po # am--include-marker
-include ./$(DEPDIR)/widget_table.Po # am--include-marker
-include ./$(DEPDIR)/widget_terminal.Po # am--include-marker
-include ./$(DEPDIR)/widget_text.Po # am--include-marker
-include ./$(DEPDIR)/widget_timer.Po # am--include-marker
-include ./$(DEPDIR)/widget_tree.Po # am--include-marker
-include ./$(DEPDIR)/widget_vbox.Po # am--include-marker
-include ./$(DEPDIR)/widget_window.Po # am--include-marker
-include ./$(DEPDIR)/widgets.Po # am--include-marker
+#include ./$(DEPDIR)/actions.Po # am--include-marker
+#include ./$(DEPDIR)/attributes.Po # am--include-marker
+#include ./$(DEPDIR)/automaton.Po # am--include-marker
+#include ./$(DEPDIR)/glade_support.Po # am--include-marker
+#include ./$(DEPDIR)/gtkdialog.Po # am--include-marker
+#include ./$(DEPDIR)/gtkdialog_lexer.Po # am--include-marker
+#include ./$(DEPDIR)/gtkdialog_parser.Po # am--include-marker
+#include ./$(DEPDIR)/printing.Po # am--include-marker
+#include ./$(DEPDIR)/signals.Po # am--include-marker
+#include ./$(DEPDIR)/stack.Po # am--include-marker
+#include ./$(DEPDIR)/stringman.Po # am--include-marker
+#include ./$(DEPDIR)/tag_attributes.Po # am--include-marker
+#include ./$(DEPDIR)/variables.Po # am--include-marker
+#include ./$(DEPDIR)/widget_button.Po # am--include-marker
+#include ./$(DEPDIR)/widget_checkbox.Po # am--include-marker
+#include ./$(DEPDIR)/widget_colorbutton.Po # am--include-marker
+#include ./$(DEPDIR)/widget_combobox.Po # am--include-marker
+#include ./$(DEPDIR)/widget_comboboxtext.Po # am--include-marker
+#include ./$(DEPDIR)/widget_edit.Po # am--include-marker
+#include ./$(DEPDIR)/widget_entry.Po # am--include-marker
+#include ./$(DEPDIR)/widget_eventbox.Po # am--include-marker
+#include ./$(DEPDIR)/widget_expander.Po # am--include-marker
+#include ./$(DEPDIR)/widget_fontbutton.Po # am--include-marker
+#include ./$(DEPDIR)/widget_frame.Po # am--include-marker
+#include ./$(DEPDIR)/widget_hbox.Po # am--include-marker
+#include ./$(DEPDIR)/widget_hscale.Po # am--include-marker
+#include ./$(DEPDIR)/widget_hseparator.Po # am--include-marker
+#include ./$(DEPDIR)/widget_list.Po # am--include-marker
+#include ./$(DEPDIR)/widget_menubar.Po # am--include-marker
+#include ./$(DEPDIR)/widget_menuitem.Po # am--include-marker
+#include ./$(DEPDIR)/widget_notebook.Po # am--include-marker
+#include ./$(DEPDIR)/widget_pixmap.Po # am--include-marker
+#include ./$(DEPDIR)/widget_progressbar.Po # am--include-marker
+#include ./$(DEPDIR)/widget_radiobutton.Po # am--include-marker
+#include ./$(DEPDIR)/widget_spinbutton.Po # am--include-marker
+#include ./$(DEPDIR)/widget_statusbar.Po # am--include-marker
+#include ./$(DEPDIR)/widget_table.Po # am--include-marker
+#include ./$(DEPDIR)/widget_terminal.Po # am--include-marker
+#include ./$(DEPDIR)/widget_text.Po # am--include-marker
+#include ./$(DEPDIR)/widget_timer.Po # am--include-marker
+#include ./$(DEPDIR)/widget_tree.Po # am--include-marker
+#include ./$(DEPDIR)/widget_vbox.Po # am--include-marker
+#include ./$(DEPDIR)/widget_window.Po # am--include-marker
+#include ./$(DEPDIR)/widgets.Po # am--include-marker
 
 $(am__depfiles_remade):
 	@$(MKDIR_P) $(@D)
@@ -540,18 +540,18 @@ $(am__depfiles_remade):
 am--depfiles: $(am__depfiles_remade)
 
 .c.o:
-	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-#	$(AM_V_CC)source='$<' object='$@' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(COMPILE) -c -o $@ $<
+#	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+#	$(AM_V_CC)source='$<' object='$@' libtool=no 
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
+	$(AM_V_CC)$(COMPILE) -c -o $@ $<
 
 .c.obj:
-	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-#	$(AM_V_CC)source='$<' object='$@' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
+#	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+#	$(AM_V_CC)source='$<' object='$@' libtool=no 
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
+	$(AM_V_CC)$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
 
 .l.c:
 	$(AM_V_LEX)$(am__skiplex) $(SHELL) $(YLWRAP) $< $(LEX_OUTPUT_ROOT).c $@ -- $(LEXCOMPILE)
