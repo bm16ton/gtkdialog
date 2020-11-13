@@ -1,3 +1,29 @@
+Will not compile with gcc-10 gcc-8 works fine so i added it as a dependency and
+added switch-to-gcc8.sh and switch-gcc-back.sh to root folder to easily switch
+between system default and gcc-8
+
+This has been updated to gtk3. Note libvte no longer works with gtk3.To
+compile with gtk3 on ubuntu;
+sudo apt-get install debhelper libgtk2.0-dev libgtk2.0-bin libglade2-dev autotools-dev byacc flex texinfo docbook-to-man libvte-dev gcc-8 g++-8 cpp-8 git
+git clone http://github.com/bm16ton/gtkdialog
+cd gtkdialog
+sudo ./switch-to-gcc8.sh
+./autogen.sh
+./configure --enable-gtk3
+make -j$(nproc)
+## now just copy it to a folder in PATH, I suggest adding -gtk3 so both versions can be installed
+sudo ./switch-gcc-back.sh
+sudo cp src/gtkdialog /usr/local/bin/gtkdialog-gtk3
+## now just have your scripts point to gtkdialog-gtk3 for gtk support
+
+TO compile regular gtk2 into deb
+cd gtkdialog
+sudo ./switch-to-gcc8.sh
+sudo dpkg-buildpackage -b -j$(nproc)
+sudo dpkg -i ../gtkdialog_0.8.3-3mx17+16_arm64.deb
+sudo ./switch-gcc-back.sh
+
+
 Gtkdialog - A small utility for fast and easy GUI building
 
 This program is free software; you can redistribute it and/or modify
