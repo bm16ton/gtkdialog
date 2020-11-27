@@ -1,8 +1,8 @@
-gtkdialog (2:0.8.3-3mx17+16) mx; urgency=medium
+gtkdialog (2:0.8.3-16ton+1) mx; urgency=medium
 
-  * Add aarch64 arm64 reverse fix
+  * Ben Maddocks simple recompile with new debian folder
 
- -- Ben Maddocks <bm16ton@gmail.com>  Thurs, 12 Nov 2020 20:16:31 -0400
+ -- Benjamin F. Maddocks <bm16ton@gmail.com>  Fri, 27 Nov 2020 20:16:31 -0400
 
 gtkdialog (2:0.8.3-3mx17+1) mx; urgency=medium
 
