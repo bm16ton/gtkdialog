@@ -3,7 +3,7 @@
 %:
 	dh $@
 override_dh_auto_configure:
-	dh_auto_configure -- --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info
+	dh_auto_configure -- --enable-gtk3 --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info
 
 override_dh_auto_build:
 	dh_auto_build UPDATE_ICON_CACHE=false
@@ -19,4 +19,6 @@ override_dh_installman:
 
 override_dh_clean:
 	dh_clean debian/gtkdialog.1
+
+
 

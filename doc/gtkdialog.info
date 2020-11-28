@@ -1,7 +1,8 @@
 This is gtkdialog.info, produced by makeinfo version 6.7 from
 gtkdialog.texi.
 
-This manual documents version 0.8.4 of the Gtkdialog utility.
+This manual documents version {No value for 'VERSION'} of the Gtkdialog
+utility.
 
    Copyright (C) 2003-2007 Laszlo Pere.
 
@@ -21,7 +22,8 @@ File: gtkdialog.info,  Node: Top,  Next: Getting Gtkdialog,  Up: (dir)
 Gtkdialog User's Manual
 ***********************
 
-This manual documents version 0.8.4 of the Gtkdialog utility.
+This manual documents version {No value for 'VERSION'} of the Gtkdialog
+utility.
 
    Copyright (C) 2003-2007 Laszlo Pere.
 
@@ -588,23 +590,23 @@ the filename found in '<output file>' attribute.
 
 
 Tag Table:
-Node: Top639
-Node: Getting Gtkdialog1716
-Node: Introduction2967
-Node: Invoking the Program3465
-Node: Widgets6129
-Node: Static label7159
-Node: Pushbutton7463
-Node: Pre-defined pushbuttons9329
-Node: Entry9921
-Node: Checkbox10852
-Node: Pixmap12549
-Node: Menus13200
-Node: Trees14009
-Node: Containers14991
-Node: Actions15103
-Node: Start and exit15793
-Node: Widget manipulation17153
+Node: Top658
+Node: Getting Gtkdialog1754
+Node: Introduction3005
+Node: Invoking the Program3503
+Node: Widgets6167
+Node: Static label7197
+Node: Pushbutton7501
+Node: Pre-defined pushbuttons9367
+Node: Entry9959
+Node: Checkbox10890
+Node: Pixmap12587
+Node: Menus13238
+Node: Trees14047
+Node: Containers15029
+Node: Actions15141
+Node: Start and exit15831
+Node: Widget manipulation17191
 
 End Tag Table
 
