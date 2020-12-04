@@ -1,5 +1,11 @@
 gtkdialog (2:0.8.3-16ton+1) mx; urgency=medium
 
+  * add gtk2 gtk3 examples tho dont immediatly see difference between the two
+
+ -- Benjamin F. Maddocks <bm16ton@gmail.com>  Fri, 27 Nov 2020 20:16:31 -0400
+
+gtkdialog (2:0.8.3-16ton+1) mx; urgency=medium
+
   * Ben Maddocks simple recompile with new debian folder
 
  -- Benjamin F. Maddocks <bm16ton@gmail.com>  Fri, 27 Nov 2020 20:16:31 -0400

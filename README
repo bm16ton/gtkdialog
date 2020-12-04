@@ -2,8 +2,7 @@ Will not compile with gcc-10 gcc-8 works fine so i added it as a dependency and
 added switch-to-gcc8.sh and switch-gcc-back.sh to root folder to easily switch
 between system default and gcc-8
 
-
-
+This has been updated to gtk3.
 sudo apt-get install debhelper libgtk2.0-dev libgtk2.0-bin libglade2-dev autotools-dev byacc flex texinfo docbook-to-man libvte-dev gcc-8 g++-8 cpp-8 git
 git clone http://github.com/bm16ton/gtkdialog
 cd gtkdialog
@@ -22,6 +21,7 @@ TO compile regular gtk2 into deb
 cd gtkdialog
 sudo ./switch-to-gcc8.sh
 sudo dpkg-buildpackage -b -j$(nproc)
+sudo rm ../gtkdialog*dbgsym*.deb
 sudo dpkg -i ../gtkdialog_0.8.3*.deb
 sudo ./switch-gcc-back.sh
 
