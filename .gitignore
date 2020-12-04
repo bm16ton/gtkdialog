@@ -70,6 +70,26 @@ modules.order
 #
 # Debian directory (make deb-pkg)
 #
+debian/.debhelper/
+debian/gtkdialog/
+config.guess
+config.sub
+config.status
+config.log
+Makefile
+data/Makefile
+data/icons/Makefile
+data/icons/hicolor/32x32/Makefile
+data/icons/hicolor/32x32/apps/Makefile
+data/icons/hicolor/Makefile
+debian/gtkdialog.debhelper.log
+doc/Makefile
+src/Makefile
+stamp-h1
+debian/files
+debian/gtkdialog.1
+debian/gtkdialog.substvars
+config.h
 
 
 #
