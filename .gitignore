@@ -78,6 +78,8 @@ config.status
 config.log
 Makefile
 data/Makefile
+data/icons/hicolor/Makefile.am
+data/icons/hicolor/Makefile.in
 data/icons/Makefile
 data/icons/hicolor/32x32/Makefile
 data/icons/hicolor/32x32/apps/Makefile
