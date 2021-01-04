@@ -18,6 +18,7 @@ sudo cp src/gtkdialog /usr/local/bin/gtkdialog-gtk3
 ## now just have your scripts point to gtkdialog-gtk3 for gtk support
 
 TO compile regular gtk2 into deb
+git clone https://github.com/bm16ton/gtkdialog.git
 cd gtkdialog
 sudo ./switch-to-gcc8.sh
 sudo dpkg-buildpackage -b -j$(nproc)
